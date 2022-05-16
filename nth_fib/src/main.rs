@@ -20,11 +20,13 @@ fn nth_fib(user_num: u64)->u64{
 fn input_int() -> u64 {
     loop {
         let mut user_input = String::new();
+        
         print!("Please keep the number low as the program is using recursion, it will take a lot of time if the number is high: ");
+        
         io::stdout().flush().unwrap();
-
         io::stdin()
             .read_line(&mut user_input).expect("Failed to read line");
+        
         let user_input:u64 = match user_input.trim().parse(){
             Ok(num) => num,
             Err(_) =>{println!("\nDid not receive number. Restarting the program...\n");
